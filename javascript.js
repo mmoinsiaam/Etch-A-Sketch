@@ -2,8 +2,10 @@ const grid = document.querySelector(".grid-holder");
 const input = document.querySelector("#dimension");
 const btn = document.querySelector("#btn");
 const dimensionDisplay = document.querySelector("#numDimensions");
+const clearBtn = document.querySelector("#clear");
 
 btn.addEventListener("click", changeGrid);
+clearBtn.addEventListener("click", clearGrid);
 
 function gridMaker(dimensions) {
     for(let i = 0; i < dimensions; i++) { //4 squares make up the column
@@ -50,4 +52,12 @@ function changeGrid() {
     input.focus();
 }
 
-gridMaker(4);
+function clearGrid() {
+    let coloredSquares = document.querySelectorAll(".colored");
+    console.log(coloredSquares);
+    for(let i = 0; i < coloredSquares.length; i++){
+        coloredSquares[i].classList.remove("colored");
+    }
+}
+
+gridMaker(4); //default is grid of 4 x 4
