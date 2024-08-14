@@ -6,9 +6,19 @@ body {
 
 .grid-holder {
     height: 80vh;
+    width: 80vh;
     margin-top: 10vh;
     display: flex;
-    flex: 1;
     flex-direction: column;
     border: 2px solid black;
+}
+
+.colSquare {
+    display: flex;
+    flex: 1;
+    margin: 0;
+}
+
+.rowSquare {
+    flex: 1;
 }
