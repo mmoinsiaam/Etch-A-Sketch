@@ -32,6 +32,12 @@ function removeGrid(){ //helper function for changeGrid. Deletes all Squares
 }
 
 function changeGrid() {
+    if(input.value == "") {
+        return;
+    }else if(input.value > 100 || input.value < 1) {
+        alert("Value must be within range of 1 to 100.");
+        return;
+    }
     let dimensions = input.value;
     input.value = '';
     removeGrid();
