@@ -4,6 +4,7 @@ const btn = document.querySelector("#btn");
 const dimensionDisplay = document.querySelector("#numDimensions");
 const clearBtn = document.querySelector("#clear");
 
+
 btn.addEventListener("click", changeGrid);
 clearBtn.addEventListener("click", clearGrid);
 
