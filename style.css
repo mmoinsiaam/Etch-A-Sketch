@@ -21,5 +21,8 @@ body {
 
 .rowSquare {
     flex: 1;
-    border: solid 2px black;
+}
+
+.colored {
+    background-color: black;
 }
