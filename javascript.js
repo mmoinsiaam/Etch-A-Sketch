@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid-holder");
 const input = document.querySelector("#dimension");
 const btn = document.querySelector("#btn");
+const dimensionDisplay = document.querySelector("#numDimensions");
 
 btn.addEventListener("click", changeGrid);
 
@@ -37,11 +38,15 @@ function changeGrid() {
     }else if(input.value > 100 || input.value < 1) {
         alert("Value must be within range of 1 to 100.");
         return;
+    }else if(isNaN(input.value)) {
+        alert("Invalid input");
+        return;
     }
     let dimensions = input.value;
     input.value = '';
     removeGrid();
     gridMaker(dimensions);
+    dimensionDisplay.textContent = dimensions + " x " + dimensions;
     input.focus();
 }
 
