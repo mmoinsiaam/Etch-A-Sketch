@@ -9,10 +9,11 @@ function gridMaker(dimensions) {
         for(let j = 0; j < dimensions; j++){ //add 4 squares to each column
             const rowSquare = document.createElement("div");
             rowSquare.classList.add("rowSquare");
+            rowSquare.addEventListener("mouseover", colorChange);
             colSquare.appendChild(rowSquare);
         } 
     }
-    console.log("Added child");
+    console.log("Added grid of " + dimensions + " dimensions.");
 }
 
-gridMaker();
+gridMaker(4);
