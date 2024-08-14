@@ -6,7 +6,6 @@ body {
 
 .grid-holder {
     height: 80vh;
-    width: auto;
     margin-top: 10vh;
     display: flex;
     flex: 1;
