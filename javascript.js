@@ -4,7 +4,6 @@ const btn = document.querySelector("#btn");
 const dimensionDisplay = document.querySelector("#numDimensions");
 const clearBtn = document.querySelector("#clear");
 
-
 btn.addEventListener("click", changeGrid);
 clearBtn.addEventListener("click", clearGrid);
 
@@ -25,8 +24,8 @@ function gridMaker(dimensions) {
 }
 
 function colorChange(e) {
-    e.target.classList.add("colored");
-    console.log("colored");
+        e.target.classList.add("colored");
+        console.log("colored");
 }
 
 function removeGrid(){ //helper function for changeGrid. Deletes all Squares
