@@ -78,6 +78,7 @@ function mm(e){
 
 function colorChange(e) {
     e.target.style.backgroundColor = colorArray[selectedColor];
+    e.target.classList.add("colored");
     console.log("colored");
 }
 
@@ -108,9 +109,9 @@ function changeGrid() {
 function clearGrid() {
     isDragging = false;
     let coloredSquares = document.querySelectorAll(".colored");
-    console.log(coloredSquares);
     for(let i = 0; i < coloredSquares.length; i++){
         coloredSquares[i].classList.remove("colored");
+        coloredSquares[i].style.backgroundColor = "white";
     }
 }
 

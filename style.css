@@ -31,6 +31,8 @@ body {
     border: 1.5px solid black;
 }
 
+.colored {}
+
 .colorBox {
     display: flex;
     flex: 1;
