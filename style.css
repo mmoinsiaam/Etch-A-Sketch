@@ -1,7 +1,3 @@
-:root {
-    --boxcol: black;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -62,11 +58,6 @@ body {
 .rowSquare {
     flex: 1;
 }
-
-.colored {
-    background-color: var(--boxcol);
-}
-
 
 .unselectable {
     user-select: none;

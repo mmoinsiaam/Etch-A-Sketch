@@ -6,7 +6,6 @@ const dimensionDisplay = document.querySelector("#numDimensions");
 const clearBtn = document.querySelector("#clear");
 const numColors = 7;
 const colorArray = ["black","red","yellow","orange","blue","purple","green"]; 
-var r = document.querySelector(':root');
 var selectedColor = 0;
 
 btn.addEventListener("click", changeGrid);
@@ -28,6 +27,8 @@ function setColorSelection(){
 
 function setColor(e){
     id = e.target.id;
+    colorIndex = parseInt(id);
+    colorName = colorArray[colorIndex]; 
     oldCol = ""+selectedColor;
     const oldBox = document.getElementById(oldCol);
     oldBox.classList.remove("selectedBox")
@@ -76,7 +77,7 @@ function mm(e){
 }
 
 function colorChange(e) {
-    e.target.classList.add("colored");
+    e.target.style.backgroundColor = colorArray[selectedColor];
     console.log("colored");
 }
 
