@@ -52,6 +52,15 @@ body {
     background-color: black;
 }
 
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+
 .input {
     justify-self: center;
     font-size: larger;

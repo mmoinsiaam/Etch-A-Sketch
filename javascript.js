@@ -23,6 +23,7 @@ function setColorSelection(){
 }
 
 function gridMaker(dimensions) {
+    grid.addEventListener("mouseleave", mu)
     for(let i = 0; i < dimensions; i++) { //4 squares make up the column
         const colSquare = document.createElement("div");
         colSquare.classList.add("colSquare");
@@ -31,6 +32,7 @@ function gridMaker(dimensions) {
         for(let j = 0; j < dimensions; j++) { //add 4 squares to each column
             const rowSquare = document.createElement("div");
             rowSquare.classList.add("rowSquare");
+            rowSquare.classList.add("unselectable");
             rowSquare.addEventListener("click", colorChange)
             rowSquare.addEventListener("mousedown", md)
             rowSquare.addEventListener("mouseup", mu)
@@ -85,6 +87,7 @@ function changeGrid() {
 }
 
 function clearGrid() {
+    isDragging = false;
     let coloredSquares = document.querySelectorAll(".colored");
     console.log(coloredSquares);
     for(let i = 0; i < coloredSquares.length; i++){
