@@ -1,3 +1,7 @@
+:root {
+    --boxcol: black;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -22,13 +26,13 @@ body {
 }
 
 .selection {
-    height: 40vh;
+    height: 35vh;
     width: 5vh;
     margin-top: 2vh;
     margin-left: 5vw;
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: 1.5px solid black;
 }
 
 .colorBox {
@@ -36,6 +40,17 @@ body {
     flex: 1;
     margin: 0;
     border: 1px solid black;
+}
+
+.selectedBox {
+    display: flex;
+    flex: 1;
+    margin: 0;
+    border: 2px solid white;
+}
+
+.colorBox:hover {
+    border: 2px solid aqua;
 }
 
 .colSquare {
@@ -49,7 +64,7 @@ body {
 }
 
 .colored {
-    background-color: black;
+    background-color: var(--boxcol);
 }
 
 

@@ -6,6 +6,8 @@ const dimensionDisplay = document.querySelector("#numDimensions");
 const clearBtn = document.querySelector("#clear");
 const numColors = 7;
 const colorArray = ["black","red","yellow","orange","blue","purple","green"]; 
+var r = document.querySelector(':root');
+var selectedColor = 0;
 
 btn.addEventListener("click", changeGrid);
 clearBtn.addEventListener("click", clearGrid);
@@ -17,9 +19,25 @@ function setColorSelection(){
     for(let i = 0; i < numColors; i++) { //4 squares make up the column
         const colorBox = document.createElement("div");
         colorBox.classList.add("colorBox");
+        colorBox.addEventListener("click", setColor)
+        colorBox.id = ""+i;
         colorBox.style.backgroundColor = colorArray[i];
         selection.appendChild(colorBox);
     }
+}
+
+function setColor(e){
+    id = e.target.id;
+    oldCol = ""+selectedColor;
+    const oldBox = document.getElementById(oldCol);
+    oldBox.classList.remove("selectedBox")
+    oldBox.classList.add("colorBox");
+
+    newCol = ""+id;
+    selectedColor = id;
+    const newBox = document.getElementById(newCol);
+    newBox.classList.remove("colorBox");
+    newBox.classList.add("selectedBox");
 }
 
 function gridMaker(dimensions) {
