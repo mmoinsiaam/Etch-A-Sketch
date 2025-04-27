@@ -7,6 +7,8 @@ const clearBtn = document.querySelector("#clear");
 btn.addEventListener("click", changeGrid);
 clearBtn.addEventListener("click", clearGrid);
 
+let isDragging = false;
+
 function gridMaker(dimensions) {
     for(let i = 0; i < dimensions; i++) { //4 squares make up the column
         const colSquare = document.createElement("div");
@@ -16,16 +18,33 @@ function gridMaker(dimensions) {
         for(let j = 0; j < dimensions; j++) { //add 4 squares to each column
             const rowSquare = document.createElement("div");
             rowSquare.classList.add("rowSquare");
-            rowSquare.addEventListener("mouseover", colorChange);
+            rowSquare.addEventListener("click", colorChange)
+            rowSquare.addEventListener("mousedown", md)
+            rowSquare.addEventListener("mouseup", mu)
+            rowSquare.addEventListener("mousemove", mm)
             colSquare.appendChild(rowSquare);
         } 
     }
     console.log("Added grid of " + dimensions + " dimensions.");
 }
 
+function md(e) {
+    isDragging = true;
+}
+
+function mu(e) {
+    isDragging = false;
+}
+
+function mm(e){
+    if(isDragging){
+        colorChange(e);
+    }
+}
+
 function colorChange(e) {
-        e.target.classList.add("colored");
-        console.log("colored");
+    e.target.classList.add("colored");
+    console.log("colored");
 }
 
 function removeGrid(){ //helper function for changeGrid. Deletes all Squares
